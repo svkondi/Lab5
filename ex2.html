@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+
+
+
+
+.numbertext {
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.circle {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  margin: 0 2px;
+  background-color: #e7eaf6;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .circle:hover {
+  background-color: #a2a8d3;
+}
+
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="https://cdn.britannica.com/80/150980-050-84B9202C/Giant-panda-cub-branch.jpg" style="width:100%" style="height:100%" >
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="https://wwf.ca/wp-content/uploads/2020/02/Portrait-of-a-giant-panda-Ailuropoda-melanoleuca-.-Bifengxia-Panda-Base-Sichuan.-China-cRichard-Barrett-_-WWF-UK-e1582614662711.jpg" style="width:100%" style="height:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="https://static.scientificamerican.com/sciam/cache/file/ACF0A7DC-14E3-4263-93F438F6DA8CE98A_source.jpg?w=590&h=800&896FA922-DF63-4289-86E2E0A5A8D76BE1" style="width:100%" style="height:100%">
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="https://www.travelandleisure.com/thmb/n4LZNPWDaJnGGl4jz988ms4u-Pk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/header-PARISPANDA1221-87f0c4cc46bf423ebcaf669c50912c3c.jpg" style="width:100%" >
+</div>
+<div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/d8/images/canvas/2022/01/26/795b5720-0a91-45cd-8f0c-ccfe494b1836_9d1e5b38.jpg?itok=P8vmWmJh&v=1643159618" style="width:100%" style="height:100%">
+</div>
+  
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="circle" onclick="currentSlide(1)"></span> 
+  <span class="circle" onclick="currentSlide(2)"></span> 
+  <span class="circle" onclick="currentSlide(3)"></span> 
+  <span class="circle" onclick="currentSlide(4)"></span> 
+  <span class="circle" onclick="currentSlide(5)"></span> 
+</div>
+
+<script>
+let Index = 1;
+slidesfade(Index);
+
+function plusSlides(n) {
+    slidesfade(Index += n);
+}
+
+function currentSlide(n) {
+    slidesfade(Index = n);
+}
+
+function slidesfade(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let circles = document.getElementsByClassName("circle");
+  if (n > slides.length) {Index = 1}    
+  if (n < 1) {Index = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < circles.length; i++) {
+    circles[i].className = circles[i].className.replace(" active", "");
+  }
+  slides[Index-1].style.display = "block";  
+  circles[Index-1].className += " active";
+}
+</script>
+
+</body>
+</html> 

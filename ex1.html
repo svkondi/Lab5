@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+label {
+    display: block;
+    font: .9rem 'Fira Sans', sans-serif;
+}
+
+input[type='submit'],
+label {
+    margin-top: 1rem;
+}
+
+</style>
+
+    <div>
+        <label for="pass">Enter password:</label>
+        <input type="password" id="pass1" name="password"
+               minlength="8" required>
+    </div>
+    <div>
+        <label for="pass">Re-Enter for validation:</label>
+        <input type="password" id="pass2" name="password"
+               minlength="8" required>
+    </div>
+    
+    <input type="submit" value="Sign in" onclick = "javascript:passconfimation();">
+    
+
+</body>
+
+<script>
+function passconfimation() {
+    var p1 = document.getElementById("pass1");
+    var p2 = document.getElementById("pass2");
+    if (p1.value.length < 8 || p2.value.length < 8){
+        alert("Passwords must be at least 8 characters long");
+    }
+
+    if (p1.value != p2.value){
+        alert("Passwords don't match");
+    }
+
+}
+</script>
+
+</html>

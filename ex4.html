@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excercise 4</title>
+<style>
+body
+{
+    background-color: #a2a8d3;
+    background-image: url(img_flwr.gif); background-size: 100%;
+}
+h1 
+{
+    color: #8293e3;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Excercise 2</h1>
+
+    <p id = "text" style = "color: red; border-style: solid; border-color: red"> This is just a fake paragraph. This is Lab 5 assignment and 
+    excercise 4 in 448 Lecture. This class is very interesting as it teaches me about the real world skills. I have learned how to communicate
+in a team well in the project and I am positive this experience will help me in my job in my near future.</p>
+    <h2 id = "color">#FF0000</h2>
+    <button type = "button" onclick = "colorchange()">Color Change</button>
+
+<script>
+    function colorchange()
+    {
+        console.log(document.getElementById("text").style.color)
+        switch(document.getElementById("text").style.color){
+            case "red":
+                document.getElementById("text").style.borderColor = "green";
+                document.getElementById("text").style.color = "green";
+                document.getElementById("color").innerHTML = "#008000";
+                break;
+            case "green":
+                document.getElementById("text").style.borderColor = "blue";
+                document.getElementById("text").style.color = "blue";
+                document.getElementById("color").innerHTML = "#0000FF";
+                break;
+            case "blue":
+                document.getElementById("text").style.borderColor = "red";
+                document.getElementById("text").style.color = "red";
+                document.getElementById("color").innerHTML = "#FF0000";
+                break;  
+
+
+        }
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
